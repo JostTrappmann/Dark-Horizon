@@ -9,4 +9,7 @@ public class Armor {
         this.defence = defence;
         this.name = name;
     }
+    public int getDefence(){
+        return defence;
+    }
 }
