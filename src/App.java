@@ -1,7 +1,11 @@
+import Armor.Armor;
+import Weapon.Weapon;
+import Monster.Monster;
 public class App {
     public static void main(String[] args){
-        public Armor shaddowArmow = new Armow("shaddow Armow", )
-        Player player = new Player();
-
+        Menue menue = new Menue();
+        Player player = menue.createPlayer();
+        menue.printPlayer(player);
+        System.out.println("");
     }
 }

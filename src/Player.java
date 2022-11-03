@@ -1,4 +1,5 @@
 import Armor.Armor;
+import Elements.*;
 import Weapon.Weapon;
 public class Player {
     private String name;
@@ -7,14 +8,15 @@ public class Player {
     private int attack;
     private Weapon weapon;
     private Armor armor;
+    private Element element;
 
 
-    public Player(String name, int maxHealth, int attack, Weapon weapon, Armor armor) {
+    public Player(String name, Element element) {
         this.name = name;
-        this.maxHealth = health;
-        this.attack = health;
-        this.weapon = weapon;
-        this.armor = armor;
+        this.maxHealth = 50;
+        this.attack = 5;
+        this.element = element;
+        regenerate();
     }
     public String getName(){
         return name;
@@ -30,18 +32,38 @@ public class Player {
         return false;
     }
     public void regenerate(){
+        if(armor != null){
+            health = maxHealth + armor.getDefence();
+        }
         health = maxHealth;
     }
     public int getHealth() {
         return health;
     }
     public int getmaxHealth(){
-        return maxHealth+armor.getDefence();
+        if(armor != null){
+            return maxHealth+armor.getDefence();
+        }
+        return maxHealth;
     }
     public void equipArmor(Armor armor){
         this.armor = armor;
     }
     public int getDamage(){
-        return attack + weapon.getDamage();
+        int damage;
+        if(weapon != null){
+            damage = attack + weapon.getDamage();
+        }
+        else damage = attack;
+        return damage;
+    }
+    public Element getElement(){
+        return element;
+    }
+    public Armor getArmor(){
+        return armor;
+    }
+    public Weapon getWeapon(){
+        return weapon;
     }
 }

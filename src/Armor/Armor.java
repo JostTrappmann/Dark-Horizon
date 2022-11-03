@@ -12,4 +12,7 @@ public class Armor {
     public int getDefence(){
         return defence;
     }
+    public String getName(){
+        return name;
+    }
 }
