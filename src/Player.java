@@ -1,7 +1,13 @@
 import Armor.Armor;
 import Elements.*;
+import Movement.Attack;
+import Movement.*;
 import Weapon.Weapon;
+
+import java.util.ArrayList;
+
 public class Player {
+    private ArrayList<Movement> moveset = new ArrayList<Movement>();
     private String name;
     private int maxHealth;
     private int health;
@@ -9,6 +15,10 @@ public class Player {
     private Weapon weapon;
     private Armor armor;
     private Element element;
+    private int maxMana;
+    private int currentMana;
+    private int maxStamina;
+    private int currentStamina;
 
 
     public Player(String name, Element element) {
@@ -16,6 +26,8 @@ public class Player {
         this.maxHealth = 50;
         this.attack = 5;
         this.element = element;
+        this.maxMana = 20;
+        this.maxStamina = 100;
         regenerate();
     }
     public String getName(){
@@ -65,5 +77,21 @@ public class Player {
     }
     public Weapon getWeapon(){
         return weapon;
+    }
+    public int getMaxMana(){
+        return maxMana;
+    }
+    public int getMaxStamina(){
+        return maxStamina;
+    }
+    private int getCurrentMana(){
+        return currentMana;
+    }
+    private int getCurrentStamina(){
+        return currentStamina;
+    }
+
+    public void useAttack(Attack attack){
+
     }
 }

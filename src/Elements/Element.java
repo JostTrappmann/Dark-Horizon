@@ -1,21 +1,33 @@
 package Elements;
+
+import Movement.ElementAttack;
+
 abstract public  class Element {
 
 
 
+
    private String name = new String();
-   private Attack specialMove;
+   private String weaponType;
+   private ElementAttack attack;
 
+   public Element(String name, String weaponType){
+      this.name = name;
+      this.weaponType = weaponType;
 
-   public Element(){
    }
+
+
+
    public String getName(){
       return name;
    }
    public void setName(String name){
       this.name = name;
    }
-
-   public static class Attack {
+   public void weaponCheck(){
    }
+
+
+
 }
