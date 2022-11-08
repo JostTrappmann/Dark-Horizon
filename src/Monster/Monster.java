@@ -8,11 +8,12 @@ public class Monster {
     private int damage;
     private ImageIcon i;
 
-    public Monster(String name, int maxHealth, int damage, ImageIcon i){
+    public Monster(String name, int maxHealth, int damage){
         this.name = name;
         this.maxHealth = maxHealth;
         this.damage = damage;
-        this.i = i;
+        this.i = new ImageIcon(getClass().getResource("Pictures\\"+name+".png"));
+
 
     }
     public int getDamage(){
