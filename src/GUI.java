@@ -20,19 +20,19 @@ public class GUI {
         background.setBackground(Color.BLACK);
 
         frame.add(background);
+        background.add(label);
         createBattle();
         background.setVisible(true);
         frame.setVisible(true);
 
     }
     public void createBattle(){
-        ImageIcon icon = new ImageIcon("slime.png");
         Slime i = new Slime();
-        i.setImageIcon(icon);
+        i.setImageIcon(i.getImageIcon());
         label.setIcon(i.getImageIcon());
         label.setSize(500,500);
-        background.add(label);
+
         label.setVisible(true);
-        frame.setIconImage(icon.getImage());
+        frame.setIconImage(i.getImageIcon().getImage());
     }
 }
